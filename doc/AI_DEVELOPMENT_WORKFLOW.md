@@ -1,86 +1,210 @@
-# AI-Assisted Development Workflow
+# AI 輔助開發流程
 
-> Status: Draft
+> 狀態：草稿
 
-This project may use ChatGPT, Gemini, Codex, Antigravity, or other AI tools. The repository documentation is the persistent source of truth; chat history alone is not.
+本專案可以使用 ChatGPT、Gemini、Codex、Antigravity 或其他 AI 工具。
 
-## 1. Roles
+但核心原則是：
 
-### Product / design discussion
+> **AI 用來加速理解與開發，不是用來取代開發者對專案的理解。**
 
-AI may help:
+GitHub 裡的文件才是專案長期保存的主要依據，不能只依賴聊天紀錄。
 
-- clarify requirements
-- compare product options
-- identify risks and missing cases
-- draft user flows and acceptance criteria
-- review consistency across documents
+---
 
-### Implementation
+## 1. 人與 AI 的角色
 
-Implementation starts only after explicit approval of the relevant requirements.
+### 開發者負責
 
-AI may later help:
+- 決定產品要解決什麼問題。
+- 決定哪些功能值得做。
+- 理解重要技術選擇。
+- 決定是否接受架構、套件或流程變更。
+- 實際操作與驗證成果。
+- 在過程中逐步學會軟體開發流程。
 
-- create implementation plans
-- write Unity/C# code
-- create tests
-- review pull requests
-- diagnose CI/build failures
+### AI 可以協助
 
-## 2. Required context for AI agents
+- 整理需求。
+- 解釋技術概念。
+- 比較不同方案。
+- 找出遺漏情境。
+- 產生實作計畫。
+- 撰寫部分程式碼。
+- 建立測試。
+- 協助 Code Review。
+- 分析錯誤與提出修正方案。
 
-Before implementing a task, an AI agent should read at minimum:
+AI 不應該因為「做得到」就自動做所有事情。
+
+---
+
+## 2. AI 執行重要工作前要先說明什麼
+
+如果工作不是單純的小修改，AI 應先讓開發者知道：
+
+1. **現在要做什麼？**
+2. **為什麼要做？**
+3. **這和目前專案階段有什麼關係？**
+4. **會修改哪些檔案或系統？**
+5. **做完後要怎麼驗證？**
+6. **這一步可以學到什麼？**
+
+不要只顯示一串指令，然後要求開發者不斷按 Enter。
+
+---
+
+## 3. AI 接手任務前應閱讀的文件
+
+至少要先理解：
 
 1. `README.md`
 2. `doc/README.md`
 3. `doc/PROJECT_BRIEF.md`
 4. `doc/REQUIREMENTS.md`
 5. `doc/DECISIONS.md`
-6. Any task-specific design document
+6. `doc/LEARNING_GUIDE.md`
+7. 與該任務直接相關的設計文件
 
-## 3. Working principle
+目的不是增加流程，而是避免不同 AI 每次都從自己的假設開始工作。
+
+---
+
+## 4. 標準工作流程
 
 ```text
-DISCUSS
-→ DOCUMENT
-→ REVIEW
-→ FREEZE TASK SCOPE
-→ IMPLEMENT
-→ TEST
-→ REVIEW
-→ MERGE
+討論（DISCUSS）
+→ 文件化（DOCUMENT）
+→ 解釋與理解（UNDERSTAND）
+→ 審查（REVIEW）
+→ 確認本次範圍（FREEZE TASK SCOPE）
+→ 實作（IMPLEMENT）
+→ 測試（TEST）
+→ 驗證結果（VERIFY）
+→ 回顧學到什麼（LEARN）
+→ 合併（MERGE）
 ```
 
-Do not allow implementation to silently redefine requirements. If implementation reveals a product decision, update the relevant document and decision log.
+其中 `UNDERSTAND` 與 `LEARN` 是本專案特別重視的步驟。
 
-## 4. Git workflow
+我們不希望流程變成：
 
-Recommended later workflow:
+```text
+AI 寫完
+→ 使用者按允許
+→ AI 再寫
+→ 使用者再按允許
+```
 
-- `main` remains the stable project baseline.
-- Each meaningful change uses a dedicated branch.
-- Changes are proposed through a pull request.
-- PR descriptions should state the requirement/design documents they implement.
-- AI-generated changes must be reviewable and testable like human-generated changes.
+---
 
-## 5. Current restriction
+## 5. 遇到技術選擇時怎麼處理
 
-The project is currently in **Phase 0 — Requirements Discovery**.
+例如 AI 想使用：
 
-Until that phase is explicitly closed:
+- 某個 Unity 套件
+- 某種架構模式
+- 資料庫
+- 雲端服務
+- 第三方 API
+- 新的測試框架
 
-- Do not create Unity application code.
-- Do not choose architecture prematurely.
-- Do not add dependencies merely because an AI agent prefers them.
-- Focus on product goals, user scenarios, scope, constraints, and acceptance criteria.
+AI 應先說明：
 
-## 6. Context handoff
+### A. 它是什麼？
 
-At the end of a meaningful discussion round:
+用非專家也能理解的方式解釋。
 
-- update the relevant document under `doc/`
-- record major decisions in `doc/DECISIONS.md`
-- keep unresolved questions explicit
+### B. 為什麼這個專案需要它？
 
-This makes it possible for a different AI model or future conversation to continue from the repository rather than reconstructing decisions from memory.
+不能只因為「一般專案都這樣做」。
+
+### C. 不使用會怎樣？
+
+確認它是真的必要，還是只是方便。
+
+### D. 有沒有比較簡單的方案？
+
+MVP 優先選擇足夠簡單、容易理解的方案。
+
+### E. 接受後會增加什麼維護成本？
+
+避免 AI 為了技術漂亮而過度設計。
+
+---
+
+## 6. Git / GitHub 工作方式
+
+未來進入實作後，原則上採用：
+
+```text
+main
+  ↑
+Pull Request
+  ↑
+功能或修改分支
+```
+
+AI 必須在需要時解釋以下概念：
+
+- **Commit**：一次有意義的版本紀錄。
+- **Branch**：從主要版本分出去進行工作。
+- **Pull Request（PR）**：提出「我要把這組修改合回主要版本」的審查單位。
+- **Merge**：審查完成後，把修改整合回主要版本。
+
+我們會實際使用這些流程來學，而不是只背定義。
+
+---
+
+## 7. 目前專案限制
+
+目前仍是：
+
+**Phase 0 — 需求探索**
+
+在這個階段：
+
+- 不建立正式 Unity 功能程式碼。
+- 不急著決定架構。
+- 不隨意加入第三方套件。
+- 不因為 AI 可以自動產生，就增加不必要功能。
+- 優先理解產品目的、使用者、使用情境與 MVP。
+
+---
+
+## 8. 每一輪工作結束時
+
+AI 應該協助回答：
+
+### 本輪完成了什麼？
+
+用一般語言說明，而不是只列 commit SHA。
+
+### 為什麼這樣做？
+
+指出主要決策。
+
+### 修改了哪些文件或程式？
+
+讓開發者知道專案真的發生了什麼變化。
+
+### 怎麼自己驗證？
+
+提供可以實際操作的檢查方式。
+
+### 這一輪應該學會什麼？
+
+至少指出 1～3 個值得理解的概念。
+
+### 下一步是什麼？
+
+明確說明下一個合理步驟，而不是直接無限自動執行。
+
+---
+
+## 9. 語言原則
+
+- 說明與設計文件使用繁體中文。
+- 必要英文術語可以保留，例如 `Pull Request`、`Prefab`、`Scene`。
+- 第一次出現時盡量附中文解釋。
+- 程式碼命名未來以英文為主，但 AI 要解釋其用途。
