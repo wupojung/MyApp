@@ -1,23 +1,59 @@
-# MyApp Documentation
+# MyApp 文件導覽
 
-This folder is the single source of truth for product discussion, requirements, design decisions, and AI-assisted development planning.
+這個 `doc/` 目錄是專案的主要設計文件區。
 
-## Documents
+之後不管是 ChatGPT、Gemini、Codex、Antigravity，或其他 AI 參與開發，都應該先閱讀這裡的文件，而不是只依賴聊天紀錄。
 
-| File | Purpose |
+## 建議閱讀順序
+
+1. `PROJECT_BRIEF.md`：先理解這個 App 為什麼要做。
+2. `REQUIREMENTS.md`：理解它需要有哪些功能與限制。
+3. `DECISIONS.md`：理解重要決策以及背後理由。
+4. `AI_DEVELOPMENT_WORKFLOW.md`：理解 AI 要怎麼參與開發。
+5. `LEARNING_GUIDE.md`：理解每個階段自己應該學會什麼。
+
+## 文件說明
+
+| 文件 | 主要用途 |
 |---|---|
-| `PROJECT_BRIEF.md` | Product vision, users, problem, goals, non-goals, and scope |
-| `REQUIREMENTS.md` | Functional and non-functional requirements |
-| `DECISIONS.md` | Important decisions and their rationale |
-| `AI_DEVELOPMENT_WORKFLOW.md` | Rules for using ChatGPT, Gemini, or other AI tools during development |
+| `PROJECT_BRIEF.md` | 產品願景、問題、使用者、核心價值與 MVP |
+| `REQUIREMENTS.md` | 功能需求、非功能需求、資料需求、UI/UX 與驗收條件 |
+| `DECISIONS.md` | 保存重要決策與理由，避免之後忘記為什麼這樣做 |
+| `AI_DEVELOPMENT_WORKFLOW.md` | 定義人與 AI 的合作方式 |
+| `LEARNING_GUIDE.md` | 定義每個階段要理解與學會的內容 |
 
-## Working rule
+## 目前工作方式
 
-The project is currently in **requirements discovery**.
+現在仍在 **Phase 0 — 需求探索**。
 
-1. Discuss the product idea.
-2. Record decisions in the documents here.
-3. Resolve open questions and define the MVP.
-4. Only then create implementation tasks and Unity source code.
+目前的工作順序是：
 
-Documents may evolve during discussion. Major changes should be recorded in `DECISIONS.md` so future AI agents can understand why a choice was made.
+```text
+提出想法
+→ 一起討論
+→ 整理需求
+→ 寫入文件
+→ 開發者閱讀與理解
+→ 確認後才進入實作
+```
+
+這代表文件不是 AI 自己看的紀錄，而是開發者也應該能直接閱讀與理解的教材。
+
+## 語言原則
+
+- 專案說明與設計文件以 **繁體中文** 為主。
+- 必要的英文技術名詞可以保留，但第一次出現時應附上中文說明。
+- 程式碼中的類別、方法、變數名稱未來仍會以英文為主，這是一般程式開發慣例。
+- 如果文件內容過度技術化，AI 應先用一般語言解釋，再進入技術細節。
+
+## 重要原則
+
+如果未來 AI 做了你看不懂的修改，不應該直接要求你按下同意。
+
+AI 應該先說明：
+
+1. 它準備做什麼。
+2. 為什麼需要這樣做。
+3. 這一步和整個專案有什麼關係。
+4. 做完以後應該怎麼驗證。
+5. 這一步你可以學到什麼。
