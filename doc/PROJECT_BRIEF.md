@@ -1,58 +1,102 @@
-# Project Brief
+# 專案摘要（Project Brief）
 
-> Status: Draft — Requirements Discovery
+> 狀態：草稿 — 需求探索中
 
-## 1. Product vision
+這份文件用來回答最根本的問題：**我們到底為什麼要做這個 App？**
 
-To be defined through discussion.
+目前先保留問題框架，後續會在討論過程中逐步填入答案。
 
-## 2. Problem to solve
+## 1. 產品願景
 
-- What problem does this app solve?
-- Why is the problem worth solving?
-- What do users currently do instead?
+待討論。
 
-## 3. Target users
+這裡之後應該用幾句話說明：
 
-- Primary users: TBD
-- Secondary users: TBD
-- User context: TBD
+- 這個 App 想提供什麼價值？
+- 使用者用了之後，什麼事情會變得更容易？
 
-## 4. Core value proposition
+## 2. 想解決的問題
 
-TBD
+待討論以下問題：
 
-## 5. MVP goal
+- 使用者現在遇到什麼問題？
+- 為什麼這個問題值得解決？
+- 如果沒有這個 App，使用者現在通常怎麼處理？
 
-Define the smallest useful version that can be built and tested in Unity.
+## 3. 目標使用者
 
-## 6. Scope
+- 主要使用者：待確認
+- 次要使用者：待確認
+- 使用情境：待確認
 
-### In scope
+這裡不是要寫「所有人都能用」，而是先找出最值得優先服務的一群人。
 
-TBD
+## 4. 核心價值
 
-### Out of scope
+待討論。
 
-TBD
+這裡會回答：
 
-## 7. Platform assumptions
+> 使用者為什麼要用我們的 App，而不是不用、用別的方法，或用其他產品？
 
-- Final application implementation: Unity
-- Initial target platform(s): TBD
-- Online/offline requirements: TBD
-- Account/login requirements: TBD
-- Backend/cloud requirements: TBD
+## 5. MVP 目標
 
-## 8. Success criteria
+MVP 是 **Minimum Viable Product（最小可行產品）**。
 
-TBD
+它不是「隨便做一個很差的版本」，而是：
 
-## 9. Open questions
+> 用最小的功能範圍，做出一個真的能驗證核心想法的版本。
 
-- What is the primary user scenario?
-- What is the single most important user action?
-- What information does the app need to store?
-- Does it need network access or external APIs?
-- Does it need AI features at runtime, or only AI-assisted development?
-- Which device/platform should be supported first?
+我們後續要找出：
+
+- 第一版一定要有什麼？
+- 哪些東西其實可以第二版再做？
+- 要做到什麼程度，才能讓真正的使用者試用？
+
+## 6. 專案範圍
+
+### 第一版預計包含
+
+待討論。
+
+### 第一版刻意不做
+
+待討論。
+
+這個區塊非常重要，因為軟體專案最容易失控的原因之一，就是功能一直增加。
+
+## 7. 平台假設
+
+目前已知：
+
+- 最終 App 預計使用 Unity 實作。
+- 第一個目標平台：待確認。
+- 是否需要網路：待確認。
+- 是否需要登入／帳號：待確認。
+- 是否需要後端或雲端服務：待確認。
+- AI 是只協助「開發」，還是 App 本身也要有 AI 功能：待確認。
+
+## 8. 成功標準
+
+待討論。
+
+成功不一定只是「程式可以跑」。之後可能會包含：
+
+- 使用者能否完成核心任務？
+- 操作是否容易理解？
+- 是否真的比原本方式更方便？
+- 使用者願不願意繼續使用？
+
+## 9. 目前最重要的問題
+
+接下來我們會依序回答：
+
+1. 這個 App 最主要的使用者是誰？
+2. 他遇到的問題是什麼？
+3. 使用者打開 App 後，最重要的一件事是什麼？
+4. App 需要儲存哪些資料？
+5. 是否需要連網或呼叫外部 API？
+6. App 本身是否需要 AI 功能？
+7. 第一個要支援的平台是什麼？
+
+這些答案會逐步變成後面的正式需求。
