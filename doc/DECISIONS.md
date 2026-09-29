@@ -1,46 +1,66 @@
-# Decision Log
+# 決策紀錄（Decision Log）
 
-Use this file to preserve important product, architecture, workflow, and scope decisions so that future contributors and AI agents can recover project context without relying on chat history.
+這份文件用來保存專案中的重要決定，以及「為什麼這樣決定」。
 
-## Decision template
+目的不是增加文件工作量，而是避免幾週後自己忘記、或換了一個 AI 之後又重新討論一次。
 
-### DEC-XXX — Title
+## 決策紀錄格式
 
-- Date: YYYY-MM-DD
-- Status: Proposed / Accepted / Superseded
-- Context:
-- Decision:
-- Rationale:
-- Consequences:
-- Related requirements:
+### DEC-XXX — 決策名稱
+
+- 日期：YYYY-MM-DD
+- 狀態：Proposed（提議）／Accepted（已接受）／Superseded（已被新決策取代）
+- 背景：為什麼會遇到這個問題？
+- 決策：最後決定怎麼做？
+- 理由：為什麼選這個方案？
+- 影響：這個決策會影響哪些地方？
+- 關聯需求：如果有，標記需求編號。
 
 ---
 
-## Decisions
+## 已確認決策
 
-### DEC-001 — Requirements before implementation
+### DEC-001 — 先確認需求，再開始實作
 
-- Date: 2026-09-29
-- Status: Accepted
-- Context: The project is being initialized before the app requirements are fully defined.
-- Decision: Do not begin application implementation yet. First discuss and document the requirements, MVP scope, and major product decisions.
-- Rationale: This reduces premature implementation and gives later AI-assisted coding a stable specification.
-- Consequences: The repository begins with planning documentation only.
+- 日期：2026-09-29
+- 狀態：Accepted
+- 背景：專案剛建立時，App 的需求尚未定義清楚。
+- 決策：暫時不開始正式功能開發，先討論並記錄產品需求、MVP 範圍與重要產品決策。
+- 理由：如果需求還不清楚就開始寫程式，很容易做出之後要全部重改的功能。AI 寫程式很快，更容易把錯誤方向快速放大。
+- 影響：目前 repository 以文件與需求討論為主。
 
-### DEC-002 — Unity as final implementation platform
+### DEC-002 — 最終使用 Unity 實作
 
-- Date: 2026-09-29
-- Status: Accepted
-- Context: The intended final application will be implemented with Unity.
-- Decision: Product and technical planning should remain compatible with a later Unity implementation.
-- Rationale: Unity is the selected application platform.
-- Consequences: Implementation-specific decisions will be deferred until requirements are clearer.
+- 日期：2026-09-29
+- 狀態：Accepted
+- 背景：這個 App 最後預計以 Unity 開發。
+- 決策：之後的產品與技術規劃需要能合理地在 Unity 中實現。
+- 理由：Unity 是目前選定的開發平台。
+- 影響：真正需要 Unity 架構決策時，再根據已確認的需求選擇適合方案，而不是現在提前設計過度複雜的架構。
 
-### DEC-003 — Design documents live under doc/
+### DEC-003 — 設計文件集中放在 doc/
 
-- Date: 2026-09-29
-- Status: Accepted
-- Context: The repository will store both project discussions/results and later source code.
-- Decision: Store product and design documentation under `doc/`.
-- Rationale: Keeps design context version-controlled and separated from later application source code.
-- Consequences: Future requirement and architecture documents should be added under `doc/` unless there is a strong reason otherwise.
+- 日期：2026-09-29
+- 狀態：Accepted
+- 背景：repository 之後會同時包含設計討論與程式碼。
+- 決策：產品、需求、流程與設計文件統一放在 `doc/`。
+- 理由：方便版本控制，也讓文件與之後的程式碼分開整理。
+- 影響：未來新增的主要設計文件原則上都放在 `doc/`。
+
+### DEC-004 — 專案文件以繁體中文為主
+
+- 日期：2026-09-29
+- 狀態：Accepted
+- 背景：開發者閱讀英文文件較吃力，希望可以直接理解專案內容。
+- 決策：README、需求、設計、決策與學習文件以繁體中文為主要語言。必要英文技術名詞可以保留，但要附中文說明。
+- 理由：文件首先要讓真正負責專案的人看得懂，而不是只方便 AI 閱讀。
+- 影響：後續 AI 產生文件時應優先使用繁體中文。
+
+### DEC-005 — AI 必須協助學習，而不是只要求授權
+
+- 日期：2026-09-29
+- 狀態：Accepted
+- 背景：開發者希望藉由這個專案學會軟體開發流程，而不是一直批准 AI 自動執行命令。
+- 決策：AI 在進行重要修改前後，必須用可以理解的方式說明目的、原因、影響與驗證方式。重要架構或產品決策不能在沒有說明的情況下自動決定。
+- 理由：本專案的成果包含「完成 App」與「建立開發能力」兩部分。
+- 影響：AI 工作流程必須加入學習說明與人工理解節點，而不追求無條件全自動化。
