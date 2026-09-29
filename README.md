@@ -1,24 +1,121 @@
 # MyApp
 
-Unity-based application project currently in the **requirements and design phase**.
+這是一個預計最終使用 **Unity** 實作的 App 專案。
 
-## Current phase
+目前專案還在 **需求討論與設計階段**，暫時不撰寫正式功能程式碼。
 
-- Discuss and define product requirements first.
-- Do **not** begin implementation until the requirements are sufficiently clear.
-- Design and planning documents live under [`doc/`](doc/).
-- Source code will be added later when implementation is explicitly approved.
+這個專案除了完成 App 之外，還有另一個重要目標：
 
-## Documentation
+> **讓開發者在 AI 協助下，實際理解 App 從需求、設計、實作、測試到完成的整個流程，而不是只是不斷按 Enter 授權 AI。**
 
-- [`doc/README.md`](doc/README.md) — documentation index
-- [`doc/PROJECT_BRIEF.md`](doc/PROJECT_BRIEF.md) — product vision and scope
-- [`doc/REQUIREMENTS.md`](doc/REQUIREMENTS.md) — evolving requirements specification
-- [`doc/DECISIONS.md`](doc/DECISIONS.md) — decision log
-- [`doc/AI_DEVELOPMENT_WORKFLOW.md`](doc/AI_DEVELOPMENT_WORKFLOW.md) — AI-assisted development workflow
+---
 
-## Development status
+## 目前階段
 
-**Phase 0 — Requirements discovery**
+目前為：
 
-No production code should be written during this phase unless explicitly approved.
+**Phase 0 — 需求探索（Requirements Discovery）**
+
+這個階段主要做以下事情：
+
+1. 討論這個 App 要解決什麼問題。
+2. 定義主要使用者。
+3. 整理使用情境。
+4. 找出最重要的核心功能。
+5. 決定第一版 MVP 要做到哪裡。
+6. 把討論結果寫成可以閱讀、可以追蹤的文件。
+
+在這些內容還沒有足夠清楚以前，原則上不開始 Unity 正式實作。
+
+---
+
+## 專案文件
+
+所有設計與討論結果集中放在 [`doc/`](doc/) 目錄。
+
+| 文件 | 用途 |
+|---|---|
+| [`doc/README.md`](doc/README.md) | 文件導覽，告訴你應該先看哪一份 |
+| [`doc/PROJECT_BRIEF.md`](doc/PROJECT_BRIEF.md) | 專案目的、使用者、問題與 MVP 範圍 |
+| [`doc/REQUIREMENTS.md`](doc/REQUIREMENTS.md) | 功能需求、非功能需求與驗收條件 |
+| [`doc/DECISIONS.md`](doc/DECISIONS.md) | 記錄重要決策，以及為什麼這樣決定 |
+| [`doc/AI_DEVELOPMENT_WORKFLOW.md`](doc/AI_DEVELOPMENT_WORKFLOW.md) | ChatGPT、Gemini、Codex 等 AI 如何參與專案 |
+| [`doc/LEARNING_GUIDE.md`](doc/LEARNING_GUIDE.md) | 這個專案每個階段應該學會什麼 |
+
+---
+
+## 開發原則
+
+我們採用以下流程：
+
+```text
+討論需求
+↓
+整理成文件
+↓
+你閱讀並理解
+↓
+確認設計
+↓
+建立實作任務
+↓
+AI 協助實作
+↓
+測試
+↓
+你與 AI 一起檢查結果
+↓
+合併
+```
+
+AI 可以幫忙加速工作，但不應該把重要決策藏在自動化流程裡。
+
+如果 AI 要新增套件、改變架構、增加重要功能或修改既有需求，必須先解釋：
+
+- 要改什麼？
+- 為什麼要改？
+- 有什麼好處？
+- 有什麼缺點或風險？
+- 有沒有更簡單的替代方案？
+
+讓開發者理解後再決定。
+
+---
+
+## AI 在這個專案中的角色
+
+AI 是：
+
+- 討論對象
+- 研究助手
+- 規格整理助手
+- 程式開發助手
+- 測試與 Code Review 助手
+
+AI **不是**：
+
+- 自動替開發者決定所有事情的人
+- 在沒有說明的情況下任意改架構的人
+- 讓開發者只負責批准指令的黑盒系統
+
+我們希望最後不只是得到一個 App，也能理解：
+
+- 為什麼要寫需求文件
+- 為什麼要做 MVP
+- Unity 專案怎麼規劃
+- Git / Branch / Commit / Pull Request 在做什麼
+- AI 如何正確參與軟體開發
+- 如何測試與確認 AI 寫出的程式碼
+
+---
+
+## 目前限制
+
+在 Phase 0 完成以前：
+
+- 暫時不建立正式 Unity 功能程式碼。
+- 暫時不急著決定複雜架構。
+- 不因為 AI 建議就隨意加入第三方套件。
+- 優先把 App 的需求與使用流程弄清楚。
+
+下一步會從 **「這個 App 到底要幫誰解決什麼問題？」** 開始討論。
