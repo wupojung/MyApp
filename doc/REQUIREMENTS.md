@@ -1,60 +1,119 @@
-# Requirements
+# 需求文件（Requirements）
 
-> Status: Draft — Requirements Discovery
+> 狀態：草稿 — 需求探索中
 
-This document will evolve from discussion into the baseline specification for implementation.
+這份文件會把我們的討論逐步整理成可以實作、可以測試、可以驗收的正式需求。
 
-## 1. User scenarios
+## 1. 使用情境
 
-TBD
+待討論。
 
-## 2. Functional requirements
+使用情境不是單純列功能，而是描述：
 
-| ID | Requirement | Priority | Status | Notes |
+> 某一類使用者，在什麼情況下，想完成什麼事情。
+
+例如未來可能會寫成：
+
+```text
+當使用者需要＿＿＿時，
+他可以打開 App，
+透過＿＿＿完成＿＿＿。
+```
+
+## 2. 功能需求
+
+功能需求代表「系統必須能做什麼」。
+
+之後會使用編號方便追蹤。
+
+| 編號 | 需求 | 優先度 | 狀態 | 備註 |
 |---|---|---|---|---|
-| FR-001 | TBD | TBD | Open | |
+| FR-001 | 待討論 | 待確認 | Open | |
 
-## 3. Non-functional requirements
+其中 `FR` 代表 Functional Requirement（功能需求）。
 
-| ID | Requirement | Priority | Status | Notes |
+## 3. 非功能需求
+
+非功能需求不是在描述某一顆按鈕或某一個功能，而是在描述系統應該具備的品質。
+
+例如：
+
+- 效能：操作反應是否要夠快？
+- 穩定性：App 當掉時怎麼辦？
+- 隱私：是否會保存個人資料？
+- 安全性：是否需要帳號與權限？
+- 無障礙：是否需要考慮文字大小、色弱等？
+- 多語系：是否需要繁中、英文等？
+- 離線：沒有網路時能不能用？
+- 裝置相容性：手機、平板、PC 哪些要支援？
+- 資料保存：關閉 App 後資料是否保留？
+- 維護性：未來是否容易修改與擴充？
+
+| 編號 | 需求 | 優先度 | 狀態 | 備註 |
 |---|---|---|---|---|
-| NFR-001 | TBD | TBD | Open | |
+| NFR-001 | 待討論 | 待確認 | Open | |
 
-Possible categories to consider later:
+其中 `NFR` 代表 Non-Functional Requirement（非功能需求）。
 
-- Performance
-- Reliability
-- Privacy
-- Security
-- Accessibility
-- Localization
-- Offline behavior
-- Device compatibility
-- Data persistence
-- Maintainability
+## 4. 資料需求
 
-## 4. Data requirements
+待討論。
 
-TBD
+這裡會記錄：
 
-## 5. External integrations
+- App 要保存什麼資料？
+- 資料存在手機本機、檔案、資料庫還是雲端？
+- 哪些資料可以刪除？
+- 哪些資料需要同步？
 
-TBD
+## 5. 外部系統整合
 
-## 6. UI / UX requirements
+待討論。
 
-TBD
+例如未來可能包含：
 
-## 7. Constraints
+- Web API
+- 第三方登入
+- AI API
+- 地圖服務
+- 雲端資料庫
+- 推播通知
 
-- Final implementation is expected to use Unity.
-- Production implementation should not begin until the MVP requirements are agreed.
-- AI tools may assist planning and later implementation, but project decisions must remain documented in the repository.
+目前不要因為「可能會用」就先加入任何服務。
 
-## 8. Acceptance criteria
+## 6. UI / UX 需求
 
-TBD
+待討論。
 
-## 9. Open issues
+這裡會描述：
 
-TBD
+- 主要畫面有哪些？
+- 使用者如何從 A 操作到 B？
+- 哪些資訊一定要看得見？
+- 哪些操作要避免太複雜？
+
+## 7. 已知限制
+
+目前確定：
+
+- 最終預計使用 Unity 實作。
+- MVP 需求未確認以前，不開始正式功能開發。
+- 可以使用 AI 協助規劃與實作。
+- 重要決策必須寫入 GitHub 文件，不能只存在聊天紀錄。
+- 專案文件以繁體中文為主，讓開發者能直接閱讀。
+
+## 8. 驗收條件
+
+待討論。
+
+驗收條件回答的是：
+
+> 我們怎麼知道這個功能真的完成了？
+
+每一項重要需求最後都應該能被實際操作或測試確認，而不是只寫「已完成」。
+
+## 9. 尚未解決的問題
+
+待討論。
+
+這裡會保留還沒有決定的事項，不急著讓 AI 自己猜答案。
